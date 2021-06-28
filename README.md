@@ -1,3 +1,6 @@
+## About
+Figmaのページ内ドキュメント作成補助プラグイン（公開済み）
+
 Below are the steps to get your plugin running. You can also find instructions at:
 
   https://www.figma.com/plugin-docs/setup/
