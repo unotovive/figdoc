@@ -1,0 +1,93 @@
+<div id="app">
+  <h2>テンプレート設定</h2>
+  <div class="property">
+    <h4>temp memo （一時メモ）</h4>
+    <p>テンプレート文章</p>
+    <input v-model="text1" />
+    <p>色</p>
+    <input type="color" v-model="color1">
+    <div class="control">
+      <button id="create1">保存</button>
+      <button id="reset1">初期状態に戻す</button>
+    </div>
+  </div>
+  <div class="property">
+    <h4>doc memo （仕様メモ）</h4>
+    <p>テンプレート文章</p>
+    <input v-model="text2" />
+    <p>色</p>
+    <input type="color" v-model="color2">
+    <div class="control">
+      <button id="create2">保存</button>
+      <button id="reset2">初期状態に戻す</button>
+    </div>
+  </div>
+  <div class="property">
+    <h4>dev memo （開発用メモ）</h4>
+    <p>テンプレート文章</p>
+    <input v-model="text3" />
+    <p>色</p>
+    <input type="color" v-model="color3">
+    <div class="control">
+      <button id="create3">保存</button>
+      <button id="reset3">初期状態に戻す</button>
+    </div>
+  </div>
+</div>
+<style>
+  h2 {
+    margin: 0;
+    padding: 0;
+  }
+
+  h4 {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  p {
+    color: #3A0D5C;
+    margin: 0;
+    padding: 0;
+    margin-top: 0.5rem;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .control {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  #app {
+    display: flex;
+    flex-direction: column;
+    color: #333;
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      text1: '',
+      text2: '',
+      text3: '',
+      color1: '',
+      color2: '',
+      color3: ''
+    }
+  })
+  document.getElementById('create').onclick = () => {
+    const textbox = document.getElementById('count');
+    const count = parseInt(textbox.value, 10);
+    parent.postMessage({ pluginMessage: { type: 'create-rectangles', count } }, '*')
+  }
+
+  document.getElementById('cancel').onclick = () => {
+    parent.postMessage({ pluginMessage: { type: 'cancel' } }, '*')
+  }
+
+</script>

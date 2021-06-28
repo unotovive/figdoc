@@ -1,0 +1,28 @@
+{
+  "name": "Figdoc",
+  "id": "978698238136308683",
+  "api": "1.0.0",
+  "main": "code.js",
+  "ui": "ui.html",
+  "menu": [
+    {
+      "name": "Create temp memo",
+      "command": "createDoc1"
+    },
+    {
+      "name": "Create doc memo",
+      "command": "createDoc2"
+    },
+    {
+      "name": "Create dev memo",
+      "command": "createDoc3"
+    },
+    {
+      "separator": true
+    },
+    {
+      "name": "Open setting",
+      "command": "setting"
+    }
+  ]
+}
